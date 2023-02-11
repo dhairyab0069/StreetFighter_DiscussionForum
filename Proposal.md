@@ -17,10 +17,6 @@
 
      *Unregistered Viewers/ Visitors: Users which are not registered and have only the basic viewing and not able to post Content, give rewards etc.
 
-* ### Point System: 
-
-    * Ranking users based awards given, no of upvotes, flairs etc.
-    * Rewards : Users can give other awards, gifts, coins etc. 
 
 
 
