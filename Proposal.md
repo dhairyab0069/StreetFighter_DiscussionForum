@@ -15,7 +15,7 @@
 
      * Moderators: They have special privildges to moderate the forums for any spam(excessive self promotion, repeated posts etc),  innapropriate content (foul laungage, explicit images/ videos), threats and so on.
 
-     *Unregistered Viewers/ Visitors: Users which are not registered and have only the basic viewing and not able to post Content, give rewards etc.
+     * Unregistered Viewers/ Visitors: Users which are not registered and have only the basic viewing and not able to post Content, give rewards etc.
 
 
 
