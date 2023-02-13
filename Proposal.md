@@ -6,7 +6,7 @@
  * ### Project description and details:
     * Description : A forum website dedicated to Fighting games 
     
-    * This site will allow users to create account and take part in daily forum discussions of the website and also able to discus`s various fan made projects and create fna based alternate storylines or games, discuss various . Forums will also let them discuss games/ characters from other fighting games or other genres of video games.
+    * This site will allow users to create account and take part in daily forum discussions of the website and also able to discus`s various fan made projects and create fan based alternate storylines or games, discuss various . Forums will also let them discuss games/ characters from other fighting games or other genres of video games.
     * Create community pages where users can discuss topics either on a specific character, game or other topics related or unrelated.
     * 
 
