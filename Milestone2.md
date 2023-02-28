@@ -29,13 +29,22 @@ The update home page now lets users to upload a post in the forum. It also allow
 
 The user clicks on the ABOUT page and which shows the purpose of site and a small description about the game franchise as well. It also links externally to the official merchandise store, official social media links, store where users can purchase the game, and other external links.
 
-The user can also able to message other users personally and also form groups in those
+The user can also able to message other users personally and also form groups and chat with multiple users.Users can also block or remove chats with other users as well(will be implemented later on).
 
 ## Design :
 
 The website is to have a simplistic design with first time users easily able to navigate the website and able to learn as soon as they test out the features.
 
-## Client Side Validation
+## Client Side Validation :
 
-The following image shows the various process of the validation of the website
+The following image shows the various process of the validation of the website:
+
 ![](images/Validation.png)
+
+If the user leaves the input fields empty, it will prompt the user to enter the required details. Similarly if the username and password do not match, it ask user to enter the correct details as well.
+
+## Static design:
+
+Some of the pages will also have static features such as heading of the Web Pages, the layout of the website,the chat menu, login and sign up page. The left hand column which shows items such as home, about , "Fandom" and "Learn More" will be static as well.
+
+## Examples:
