@@ -2,6 +2,8 @@
 
 ## Layout
 
+The following shows the layout of the website and how the various pages are linked with one another.
+
 ![](images/Layout1.png)
 
 ![](images/Layout2.png)
