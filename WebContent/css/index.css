@@ -1,0 +1,9 @@
+header {
+  height: 45px;
+  white-space: nowrap;
+  background-color: gray;
+  margin: 2em 5em 0em;
+}
+.right {
+  float: right;
+}

@@ -1,0 +1,40 @@
+html {
+  margin: 2 em;
+  border: dashed 0.25em;
+  border-radius: 1em;
+}
+form {
+  margin: 5 em;
+  text-align: center;
+  padding: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  font-family: "Times New Roman", Times, serif;
+  padding: 2em;
+  margin: 2em 10em 0em 10em;
+  border: solid 0.5em;
+  border-radius: 2em;
+}
+
+#submit {
+  background-color: crimson;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 2em;
+  margin: 2em;
+}
+#cancel {
+  background-color: seagreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.buttons {
+  margin: 2em;
+  text-align: center;
+  margin-inline: 1em 2em;
+}
+image {
+  size: 30%;
+}
