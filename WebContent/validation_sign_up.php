@@ -1,5 +1,8 @@
 <html>
-  <head> </head>
+  <head>
+    
+  <link href ="css/validation.css" rel = "stylesheet">
+  </head>
   <body>
     <div class="content">
       <h1>Sign Up to System</h1>
@@ -8,7 +11,7 @@
       <form
         name="MyForm"
         method="post"
-        action="http://www.randyconnolly.com/tests/process.php"
+        action="validation/signup_validate.php"
       >
         <table style="display: inline">
           <tr>
@@ -44,24 +47,22 @@
             <td>
               <div align="right">
                 <font face="Arial, Helvetica, sans-serif" size="2"
-                  >First name:</font
-                >
+                  >Email:</font>
               </div>
             </td>
             <td>
-              <input type="text" name="First name" pattern="[A-Za-z]{4,20}" />
+              <input type="text" name="email"/>
             </td>
           </tr>
           <tr>
             <td>
               <div align="right">
                 <font face="Arial, Helvetica, sans-serif" size="2"
-                  >Username:</font
-                >
+                  >Username:</font>
               </div>
             </td>
             <td>
-              <input type="text" name="Username " pattern="[A-Za-z]{4,20}" />
+              <input type="text" name="Username "/>
             </td>
           </tr>
           <tr>
@@ -76,7 +77,6 @@
               <input
                 type="password"
                 name="Password"
-                pattern="[A-Za-z]{4,20}"
                 required
               />
             </td>
@@ -87,7 +87,7 @@
           class="submit"
           type="submit"
           name="Submit2"
-          value="Log In"
+          value="Sign Up"
           required
         />
       </form>

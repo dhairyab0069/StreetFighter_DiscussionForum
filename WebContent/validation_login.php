@@ -5,9 +5,10 @@
   <body>
     <div class="content">
       <h1>Please Login to System</h1>
+      <link href ="css/validation.css" rel = "stylesheet">
 
       <br />
-      <form name="MyForm" method="post" action="validate.php">
+      <form name="MyForm" method="post" action="validation/validate.php">
         <div class="form">
           <img src="images/sf.png" alt="Street Fighter logo" class="logo" />
           <input

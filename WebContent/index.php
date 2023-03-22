@@ -81,6 +81,32 @@
       </ul>
     </main>
 
+    
+    <?php
+
+if(isset($_SESSION['username']))
+{
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
+
+    echo "<h2> Direct Messaging </h2>";
+    
+    echo '<a href="#">Log Out</a><br>';
+    echo '<a href="#">Sign UP</a><br>';
+
+
+}
+else
+{
+
+    echo "<h2> Direct Messaging </h2>";
+
+    echo "Please Log in to use this feature";
+}
+
+
+    ?>
+
 
 
 
@@ -90,7 +116,7 @@
     Random Text for the boys to involve the use of testing for this website. The posts will shpow up here. This is just a place holder
     text for them to align here.
 
-
+    
     
     </article>
 
@@ -98,32 +124,7 @@
     </div>
     
     
-    <h2> Direct Messaging </h2>
-    <?php
-
-if(isset($_SESSION['username']))
-{
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
     
-    echo '<nav>';
-    echo '<ul>';
-    echo '<li><a href="index.php">Home</a></li>';
-    echo  '<li><a href="About.php">About</a></li>';
-    echo '<li><a href="#">Log Out</a></li>';
-    echo '<li><a href="#">Sign UP</a></li>';
-    echo '</ul>';
-    echo '</nav>';
-
-}
-else
-{
-    echo "Please Log in to use this feature";
-    echo "<br><br><br>";
-}
-
-
-    ?>
 
     <footer>
       <p>
