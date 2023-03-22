@@ -1,9 +1,4 @@
-<?php
 
-
-
-
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,16 +12,16 @@
       crossorigin="anonymous"
     />
     <link rel = "stylesheet" href = "css/index.css">
+    <link rel = "shortcut icon" href="icon.ico">
   </head>
   <body>
     <header>
       
     <h1>Street Fighter Discussions Forum</h1>
-    </header>
-    <div id = "main">
 
-    <article id ="left">
     
+    
+    </header>
     <?php 
     
     if(isset($_SESSION['username']))
@@ -36,8 +31,7 @@
         
         echo '<nav>';
         echo '<ul>';
-        echo '<li><a href="index.php">Home</a></li>';
-        echo  '<li><a href="About.php">About</a></li>';
+
         echo '<li><a href="#">Log Out</a></li>';
         echo '<li><a href="#">Sign UP</a></li>';
         echo '</ul>';
@@ -48,8 +42,7 @@
     {
         echo '<nav>';
         echo '<ul>';
-        echo '<li><a href="index.php">Home</a></li>';
-        echo  '<li><a href="About.php">About</a></li>';
+        
         echo '<li><a href="validation_login.php">Login</a></li>';
         echo '<li><a href="validation_sign_up.php">Sign Up</a></li>';
         echo '</ul>';
@@ -60,12 +53,25 @@
     
     
     ?>
-</article>
+    <br> <br><br>
+    <image src = "images/sf.png" class = "logo">
+    <br><br><br>
+    <div id = "main">
+    <article id = "center">
 
-
-    </div>
-    
-    <main>
+        <ul>
+            <nav>
+                <li><a href = "#D"> Home </a><br>
+                <li><a href="#reviews"> About</a><br>
+                <li><a href="https://streetfighter.fandom.com/wiki/Street_Fighter_Wiki"> 
+                    Fandom <image src = "images/external.svg" class = "logo"></a><br>
+                <li><a href="https://www.streetfighter.com/en/"> 
+                    Learn More <image src = "images/external.svg" class = "logo"></a><br>
+                    
+            </nav>
+                    
+        </ul>
+        <main>
       <h2>Latest Discussions</h2>
       <ul>
         <li><a href="#">Topic 1</a></li>
@@ -74,20 +80,62 @@
         <li><a href="#">Topic 4</a></li>
       </ul>
     </main>
+
+
+
+
+    </article>
+    <article id ="right_sidebar">
+    
+    Random Text for the boys to involve the use of testing for this website. The posts will shpow up here. This is just a place holder
+    text for them to align here.
+
+
+    
+    </article>
+
+
+    </div>
+    
+    
+    <h2> Direct Messaging </h2>
+    <?php
+
+if(isset($_SESSION['username']))
+{
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
+    
+    echo '<nav>';
+    echo '<ul>';
+    echo '<li><a href="index.php">Home</a></li>';
+    echo  '<li><a href="About.php">About</a></li>';
+    echo '<li><a href="#">Log Out</a></li>';
+    echo '<li><a href="#">Sign UP</a></li>';
+    echo '</ul>';
+    echo '</nav>';
+
+}
+else
+{
+    echo "Please Log in to use this feature";
+    echo "<br><br><br>";
+}
+
+
+    ?>
+
     <footer>
       <p>
-        &copy; Capcom Co., Ltd. All Rights Reserved. All materials contained on
-        this website, including but not limited to images, graphics, logos, and
-        text, are the property of Capcom or its affiliates and are protected by
-        copyright laws. Unauthorized use, reproduction, or distribution of any
-        materials on this website is strictly prohibited and may result in civil
-        and criminal penalties. Capcom reserves the right to modify or remove
-        any materials on this website at any time without notice. By accessing
-        this website, you agree to abide by all copyright laws and other
-        applicable laws and regulations.
+        &copy; Any use of copyrighted material on this website is done under the Fair Use provision of the U.S. Copyright Act,
+         which allows for the use of copyrighted material for criticism, comment, news reporting, teaching, scholarship, or 
+         research purposes. The use of copyrighted material on this website is not intended to infringe upon the owner's rights,
+          and the material is used solely for the purposes of education and research. If you believe that any content on this
+           website infringes upon your copyright, please contact us to request its removal.
 
 
         <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
+        <a target="_blank" href="https://icons8.com/icon/60664/external-link">External Link</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
       </p>
     </footer>
   </body>
