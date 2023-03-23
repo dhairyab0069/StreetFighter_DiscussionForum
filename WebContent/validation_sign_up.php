@@ -18,8 +18,7 @@
             <td>
               <div align="right">
                 <font face="Arial, Helvetica, sans-serif" size="2"
-                  >First name:</font
-                >
+                  >First name:</font>
               </div>
             </td>
             <td>
@@ -69,8 +68,7 @@
             <td>
               <div align="right">
                 <font face="Arial, Helvetica, sans-serif" size="2"
-                  >Password:</font
-                >
+                  >Password:</font>
               </div>
             </td>
             <td>
@@ -91,6 +89,11 @@
           required
         />
       </form>
+      <?php
+
+      include('validation/signup_validate.php');
+
+      ?>
     </div>
   </body>
 </html>

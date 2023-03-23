@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
       // Display an error message if the username or password is incorrect
       $login_error = 'Invalid username or password.';
+      echo $login_error;
     }
 
     // Close the database connection

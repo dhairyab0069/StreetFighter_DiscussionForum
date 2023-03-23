@@ -26,9 +26,9 @@
             placeholder="Password"
           />
           <button type="submit" class="login-button">Log In</button>
-          <a href="#" class="forgot-password-link">Forgot Password?</a>
+          <a href="forgot.php" class="forgot-password-link">Forgot Password?</a>
           <div class="signup-link">
-            Don't have an account? <a href="#">Sign up</a>
+            Don't have an account? <a href="validation_sign_up.php">Sign up</a>
           </div>
         </div>
       </form>

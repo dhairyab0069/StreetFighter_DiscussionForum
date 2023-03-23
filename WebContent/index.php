@@ -33,7 +33,7 @@
         echo '<ul>';
 
         echo '<li><a href="#">Log Out</a></li>';
-        echo '<li><a href="#">Sign UP</a></li>';
+        echo '<li><a href="#"><img src ="images/profile.svg"></a></li>';
         echo '</ul>';
         echo '</nav>';
 

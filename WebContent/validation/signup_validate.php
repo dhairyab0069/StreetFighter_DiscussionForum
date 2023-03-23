@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":password", password_hash($_POST["Password"], PASSWORD_DEFAULT));
         $stmt->execute();
 
-        // Redirect user to a success page
+        // Redirect user to a home page
         header("Location: index.php");
         die();
     } else {
