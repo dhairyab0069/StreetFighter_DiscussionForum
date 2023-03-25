@@ -54,6 +54,7 @@
     $password = test_input($_POST['Password']);
   }
 
+
   // If there are errors, store them in session and redirect to signup page with errors
   if (!empty($errors)) {
     $_SESSION['errors'] = $errors;
@@ -62,6 +63,7 @@
   }
 
   // If there are no errors, redirect to success page
+  $_SESSION['username'] = $username;
   header('Location: ../index.php');
   exit;
 

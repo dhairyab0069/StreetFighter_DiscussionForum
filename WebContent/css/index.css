@@ -1,21 +1,22 @@
 body {
-  background-color: #eff7ff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  background-color: #f8c291;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
   line-height: 1.4;
-  color: #333;
+  color: #3f3f3f;
 }
 
 header {
-  background-color: #cee3f8;
+  background-color: #d9b382;
   padding: 20px;
   text-align: center;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
+  text-shadow: 2px 2px #ffbe7d;
 }
 
 nav ul {
@@ -23,7 +24,7 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #cee3f8;
+  background-color: #d9b382;
 }
 
 nav li {
@@ -32,19 +33,20 @@ nav li {
 
 nav li a {
   display: block;
-  color: #333;
+  color: #3f3f3f;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  text-shadow: 1px 1px #ffbe7d;
 }
 
 nav li a:hover {
-  background-color: #a6c1e1;
+  background-color: #be8e55;
 }
 
-.logo {
-  height: 30px;
-  width: 30px;
+#logo {
+  height: 300px;
+  width: 300px;
 }
 
 #main {
@@ -58,14 +60,16 @@ nav li a:hover {
   width: 60%;
   padding: 10px;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #be8e55;
+  box-shadow: 2px 2px #ffbe7d;
 }
 
 #right_sidebar {
   width: 35%;
   padding: 10px;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #be8e55;
+  box-shadow: 2px 2px #ffbe7d;
 }
 
 ul {
@@ -76,7 +80,7 @@ ul {
 
 li {
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #be8e55;
 }
 
 li:last-child {
@@ -84,8 +88,9 @@ li:last-child {
 }
 
 a {
-  color: #0079d3;
+  color: #b15c3e;
   text-decoration: none;
+  text-shadow: 1px 1px #ffbe7d;
 }
 
 a:hover {
@@ -93,7 +98,7 @@ a:hover {
 }
 
 footer {
-  background-color: #cee3f8;
+  background-color: #d9b382;
   padding: 10px;
   text-align: center;
   font-size: 12px;
@@ -109,10 +114,34 @@ footer div {
 }
 
 .footer-link {
-  color: #0079d3;
+  color: #b15c3e;
   text-decoration: none;
+  text-shadow: 1px 1px #ffbe7d;
 }
 
 .footer-link:hover {
   text-decoration: underline;
+}
+input[type="button"] {
+  background-color: #3b5998;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 0 #2d4373;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #2d4373;
+  box-shadow: 0 3px 0 #1d2842;
+}
+
+input[type="button"]:active {
+  background-color: #2d4373;
+  box-shadow: none;
+  transform: translateY(3px);
 }

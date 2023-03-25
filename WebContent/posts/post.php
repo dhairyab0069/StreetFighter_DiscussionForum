@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     />
     <head>
-      <link rel="stylesheet" href="css/post.css" />
+      <link rel="stylesheet" href="../css/post.css" />
       <script>
         function displayImage() {
           var input = document.getElementById("image-input");
@@ -28,7 +28,7 @@
   <body>
     <div class="heading">POST</div>
 
-    <form action="validation/posts.php" method="post">
+    <form action="../validation/posts.php" method="post">
       <label for="title">Title:</label><br />
       <input type="text" id="title" name="title" /><br />
       <label for="content">Content:</label><br />
@@ -40,8 +40,7 @@
       <div class="buttons">
         <input type="submit" value="Submit" id="submit" />
         <a href="index.php">
-          <input type="submit" value="Cancel" id="Cancel" p
-        /></a>
+          <input type="submit" value="Cancel" id="Cancel"  ></a>
       </div>
     </form>
   </body>

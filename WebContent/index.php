@@ -54,6 +54,17 @@
     ?>
     <br> <br><br>
     <image src = "images/sf.png" class = "logo">
+      <?php
+      $post_bt = '<button onclick="location.href=\'posts/post.php\'">Post</button>';
+      if(isset($_SESSION['username']))
+      {
+        echo $post_bt;
+      }
+      
+      
+
+
+      ?>  
     <br><br><br>
     <div id = "main">
     <article id = "center">
@@ -82,10 +93,10 @@ if(isset($_SESSION['username']))
     echo '<main>';
     echo '<ul>';
     echo '<li><a href="#">Topic 1</a></li>';
-    echo '<li><a href="#">Topic 1</a></li>';
-    echo '<li><a href="#">Topic 1</a></li>';
-    echo '<li><a href="#">Topic 1</a></li>';
-    echo '<li><a href="#">Topic 1</a></li>';
+    echo '<li><a href="#">Topic 2</a></li>';
+    echo '<li><a href="#">Topic 3</a></li>';
+    echo '<li><a href="#">Topic 4</a></li>';
+    echo '<li><a href="#">Topic 5</a></li>';
     echo '</ul>';
     echo '</main>';
 
@@ -107,9 +118,15 @@ else
 
     </article>
     <article id ="right_sidebar">
+
+    
+    <br>
     
     Random Text for the boys to involve the use of testing for this website. The posts will shpow up here. This is just a place holder
     text for them to align here.
+
+
+   
 
     
     
