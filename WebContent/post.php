@@ -39,7 +39,7 @@
 
       <div class="buttons">
         <input type="submit" value="Submit" id="submit" />
-        <a href="Home.html">
+        <a href="index.php">
           <input type="submit" value="Cancel" id="Cancel" p
         /></a>
       </div>

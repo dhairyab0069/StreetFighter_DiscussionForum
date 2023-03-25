@@ -12,7 +12,6 @@
       crossorigin="anonymous"
     />
     <link rel = "stylesheet" href = "css/index.css">
-    <link rel = "shortcut icon" href="icon.ico">
   </head>
   <body>
     <header>
@@ -23,7 +22,7 @@
     
     </header>
     <?php 
-    
+    session_start();
     if(isset($_SESSION['username']))
     {
         $username = $_SESSION['username'];
@@ -32,8 +31,8 @@
         echo '<nav>';
         echo '<ul>';
 
-        echo '<li><a href="#">Log Out</a></li>';
-        echo '<li><a href="#"><img src ="images/profile.svg"></a></li>';
+        echo '<li><a href="validation/logout.php">Log Out</a></li>';
+        echo '<li><a href="#"><img src ="images/icon.ico " class = "profile-pic"></a></li>';
         echo '</ul>';
         echo '</nav>';
 
@@ -71,35 +70,31 @@
             </nav>
                     
         </ul>
-        <main>
-      <h2>Latest Discussions</h2>
-      <ul>
-        <li><a href="#">Topic 1</a></li>
-        <li><a href="#">Topic 2</a></li>
-        <li><a href="#">Topic 3</a></li>
-        <li><a href="#">Topic 4</a></li>
-      </ul>
-    </main>
-
-    
     <?php
+    session_start();
 
 if(isset($_SESSION['username']))
 {
     $username = $_SESSION['username'];
     $password = $_SESSION['password'];
 
-    echo "<h2> Direct Messaging </h2>";
-    
-    echo '<a href="#">Log Out</a><br>';
-    echo '<a href="#">Sign UP</a><br>';
+    echo "<h2>Latest Discussions</h2>";
+    echo '<main>';
+    echo '<ul>';
+    echo '<li><a href="#">Topic 1</a></li>';
+    echo '<li><a href="#">Topic 1</a></li>';
+    echo '<li><a href="#">Topic 1</a></li>';
+    echo '<li><a href="#">Topic 1</a></li>';
+    echo '<li><a href="#">Topic 1</a></li>';
+    echo '</ul>';
+    echo '</main>';
 
 
 }
 else
 {
 
-    echo "<h2> Direct Messaging </h2>";
+    echo "<h2>Latest Discussions</h2>";
 
     echo "Please Log in to use this feature";
 }
@@ -138,6 +133,7 @@ else
         <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
         <a target="_blank" href="https://icons8.com/icon/60664/external-link">External Link</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
       </p>
+      <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
     </footer>
   </body>
 </html>

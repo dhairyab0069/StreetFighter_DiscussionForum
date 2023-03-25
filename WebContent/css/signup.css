@@ -1,0 +1,79 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background color */
+body {
+  background-color: #f4f4f4;
+}
+
+/* Set font */
+body,
+input,
+button {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Set form container styles */
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #cccccc;
+}
+
+/* Set form header styles */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Set form field styles */
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 16px;
+}
+
+/* Set form submit button styles */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffcd00;
+  border: none;
+  border-radius: 5px;
+  color: #333333;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Set form submit button hover styles */
+input[type="submit"]:hover {
+  background-color: #ffb400;
+}
+
+/* Set form error message styles */
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 20px;
+}

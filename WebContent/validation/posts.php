@@ -1,6 +1,6 @@
 <?php
 // Set up database connection
-$servername = "localhost";
+$servername = "cosc360.ok.ubc.ca";
 $username = "username";
 $password = "password";
 $dbname = "mydatabase";

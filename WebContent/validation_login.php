@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
   <head>
     <title>Login</title>
@@ -33,5 +36,12 @@
         </div>
       </form>
     </div>
+    <?php
+    if (isset($_SESSION['result'])) {
+        echo $_SESSION['result'];
+        unset($_SESSION['result']);
+    }
+    ?>
+    <a href ="index.php">[ Back To Home ] </a>
   </body>
 </html>

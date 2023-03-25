@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <title>Forgot Password</title>
@@ -26,7 +27,7 @@
           <input
             type="password"
             id="new_password"
-            name="new_password"
+            name="password"
             class="new-password"
             placeholder="Enter new password"
           /><br /><br />
@@ -34,7 +35,7 @@
           <input
             type="password"
             id="confirm_password"
-            name="confirm_password"
+            name="password"
             class="confirm-password"
             placeholder="Confirm password"
           /><br /><br />

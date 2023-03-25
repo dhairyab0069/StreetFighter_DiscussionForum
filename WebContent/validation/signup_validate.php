@@ -1,40 +1,75 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Define validation rules for form fields
-    $validation_rules = array(
-        "First name" => "required|alpha",
-        "Last name" => "required|alpha",
-        "Username" => "required|alpha",
-        "Password" => "required"
-    );
+  session_start();
 
-    // Define error messages for validation rules
-    $validation_messages = array(
-        "required" => "This field is required",
-        "alpha" => "This field must contain only letters"
-    );
+  $errors = array(); // Initialize empty array for errors
 
-    // Validate form data using a validation library or function
-    // Here, we're using the Valitron library (https://github.com/vlucas/valitron)
-    require_once "vendor/autoload.php";
-    $v = new Valitron\Validator($_POST);
-    $v->mapFieldsRules($validation_rules, $validation_messages);
-    if ($v->validate()) {
-        // If form data is valid, insert it into database
-        $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, username, password) VALUES (:first_name, :last_name, :username, :password)");
-        $stmt->bindParam(":first_name", $_POST["First name"]);
-        $stmt->bindParam(":last_name", $_POST["Last name"]);
-        $stmt->bindParam(":username", $_POST["Username"]);
-        $stmt->bindParam(":password", password_hash($_POST["Password"], PASSWORD_DEFAULT));
-        $stmt->execute();
-
-        // Redirect user to a home page
-        header("Location: index.php");
-        die();
-    } else {
-        // If form data is invalid, display error messages to user
-        $errors = $v->errors();
-        // Display error messages to user
+  // Validate first name
+  if (empty($_POST['First_name'])) {
+    $errors['First_name'] = 'First name is required';
+  } else {
+    $first_name = test_input($_POST['First_name']);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
+      $errors['First_name'] = 'Only letters and white space allowed';
     }
-}
+  }
+
+  // Validate last name
+  if (empty($_POST['Last_name'])) {
+    $errors['Last_name'] = 'Last name is required';
+  } else {
+    $last_name = test_input($_POST['Last_name']);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$last_name)) {
+      $errors['Last_name'] = 'Only letters and white space allowed';
+    }
+  }
+
+  // Validate email
+  if (empty($_POST['email'])) {
+    $errors['email'] = 'Email is required';
+  } else {
+    $email = test_input($_POST['email']);
+    // check if email address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors['email'] = 'Invalid email format';
+    }
+  }
+
+  // Validate username
+  if (empty($_POST['Username'])) {
+    $errors['Username'] = 'Username is required';
+  } else {
+    $username = test_input($_POST['Username']);
+    // check if username is alphanumeric
+    if (!preg_match("/^[a-zA-Z0-9]*$/",$username)) {
+      $errors['Username'] = 'Only letters and numbers allowed';
+    }
+  }
+
+  // Validate password
+  if (empty($_POST['Password'])) {
+    $errors['Password'] = 'Password is required';
+  } else {
+    $password = test_input($_POST['Password']);
+  }
+
+  // If there are errors, store them in session and redirect to signup page with errors
+  if (!empty($errors)) {
+    $_SESSION['errors'] = $errors;
+    header('Location: ../signup_validate.php');
+    exit;
+  }
+
+  // If there are no errors, redirect to success page
+  header('Location: ../index.php');
+  exit;
+
+  // Function to test input data and remove special characters
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 ?>
