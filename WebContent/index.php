@@ -71,8 +71,8 @@
 
         <ul>
             <nav>
-                <li><a href = "#D"> Home </a><br>
-                <li><a href="#reviews"> About</a><br>
+                <li><a href = "index.php"> Home </a><br>
+                <li><a href="About.php"> About</a><br>
                 <li><a href="https://streetfighter.fandom.com/wiki/Street_Fighter_Wiki"> 
                     Fandom <image src = "images/external.svg" class = "logo"></a><br>
                 <li><a href="https://www.streetfighter.com/en/"> 

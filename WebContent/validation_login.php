@@ -7,7 +7,6 @@ session_start();
   </head>
   <body>
     <div class="content">
-      <h1>Please Login to System</h1>
       <link href ="css/validation.css" rel = "stylesheet">
 
       <br />
