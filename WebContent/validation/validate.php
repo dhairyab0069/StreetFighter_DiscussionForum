@@ -13,28 +13,23 @@ if (isset($_POST['username']) && isset($_POST['password']))
     else 
     {
         
-        $file = fopen("usernames.txt", "r");
-        $headers = fgetcsv($file);
-        $data = array();
-        while ($row = fgetcsv($file)) {
-            $data[] = array_combine($headers, $row);
-        }
-        fclose($file);
+        $servername = "localhost";
+        $dbusername = "dhairya";
+        $dbpassword = "db19082002";
+        $dbname = "forum";
 
-        
-        $match = false;
-        foreach ($data as $user) {
-            if ($user['username'] == $username && $user['password'] == $password) 
-            {
-                $match = true;
-                break;
-            }
+        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
         }
 
-        if ($match)
-         {
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) 
+        {
             $_SESSION['username'] = $username;
-            echo "<p style='color:green;'>Login Sucessful</p>";
+            echo "<p style='color:green;'>Login Successful</p>";
             header("Location: ../index.php");
             exit();
         }
@@ -42,6 +37,8 @@ if (isset($_POST['username']) && isset($_POST['password']))
         {
             echo "Incorrect username or password";
         }
+
+        mysqli_close($conn);
     }
 }
  else 

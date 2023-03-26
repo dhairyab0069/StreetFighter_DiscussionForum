@@ -1,6 +1,18 @@
 <?php
 session_start();
 
+// Connect to database
+$host = "localhost";
+$user = "dhairya";
+$password = "db19082002";
+$dbname = "forum";
+
+$conn = mysqli_connect($host, $user, $password, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
 $errors = array(); // Initialize empty array for errors
 
 // Validate first name
@@ -62,14 +74,20 @@ if (!empty($errors)) {
   exit;
 }
 
-// If there are no errors, store the username and password in the file
-$user = $username . ',' . $password . "\n";
-file_put_contents('usernames.txt', $user, FILE_APPEND);
+// If there are no errors, insert user data into the database
+$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password')";
 
-// Store the username in the session and redirect to success page
-$_SESSION['username'] = $username;
-header('Location: ../index.php');
-exit;
+if (mysqli_query($conn, $sql)) {
+  // Store the username in the session and redirect to success page
+  $_SESSION['username'] = $username;
+  header('Location: ../index.php');
+  exit;
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+// Close database connection
+mysqli_close($conn);
 
 // Function to test input data and remove special characters
 function test_input($data) {
