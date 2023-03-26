@@ -25,8 +25,6 @@
     session_start();
     if(isset($_SESSION['username']))
     {
-        $username = $_SESSION['username'];
-        $password = $_SESSION['password'];
         
         echo '<nav>';
         echo '<ul>';
@@ -35,6 +33,7 @@
         echo '<li><a href="#">Profile</a></li>';
         echo '</ul>';
         echo '</nav>';
+        
 
     }
     else
@@ -92,11 +91,9 @@ if(isset($_SESSION['username']))
     echo "<h2>Latest Discussions</h2>";
     echo '<main>';
     echo '<ul>';
-    echo '<li><a href="#">Topic 1</a></li>';
+    echo '<li><a href="discussions/topic1.php">Topic 1</a></li>';
     echo '<li><a href="#">Topic 2</a></li>';
     echo '<li><a href="#">Topic 3</a></li>';
-    echo '<li><a href="#">Topic 4</a></li>';
-    echo '<li><a href="#">Topic 5</a></li>';
     echo '</ul>';
     echo '</main>';
 
@@ -122,9 +119,34 @@ else
     
     <br>
     
-    Random Text for the boys to involve the use of testing for this website. The posts will shpow up here. This is just a place holder
-    text for them to align here.
+    <ul>
+    <?php
+      // Connect to database
+      $host = "localhost";
+      $user = "dhairya";
+      $password = "db19082002";
+      $dbname = "forum";
 
+      $conn = mysqli_connect($host, $user, $password, $dbname);
+
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+
+      // Query to get recent posts
+      $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
+      $result = mysqli_query($conn, $sql);
+
+      // Loop through posts and display them
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo "<li>".$row['title'];
+        echo "<br>".$row['content']."</li>";
+      }
+
+      // Close database connection
+      mysqli_close($conn);
+    ?>
+  </ul>
 
    
 
