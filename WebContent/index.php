@@ -32,7 +32,7 @@
         echo '<ul>';
 
         echo '<li><a href="validation/logout.php">Log Out</a></li>';
-        echo '<li><a href="#"><img src ="images/icon.ico " class = "profile-pic"></a></li>';
+        echo '<li><a href="#">Profile</a></li>';
         echo '</ul>';
         echo '</nav>';
 

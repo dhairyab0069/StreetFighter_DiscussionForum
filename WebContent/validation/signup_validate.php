@@ -1,5 +1,8 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+
+ini_set('display_errors', '1');
 
 // Connect to database
 $host = "localhost";
@@ -14,28 +17,6 @@ if (!$conn) {
 }
 
 $errors = array(); // Initialize empty array for errors
-
-// Validate first name
-if (empty($_POST['First_name'])) {
-  $errors['First_name'] = 'First name is required';
-} else {
-  $first_name = test_input($_POST['First_name']);
-  // check if name only contains letters and whitespace
-  if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
-    $errors['First_name'] = 'Only letters and white space allowed';
-  }
-}
-
-// Validate last name
-if (empty($_POST['Last_name'])) {
-  $errors['Last_name'] = 'Last name is required';
-} else {
-  $last_name = test_input($_POST['Last_name']);
-  // check if name only contains letters and whitespace
-  if (!preg_match("/^[a-zA-Z ]*$/",$last_name)) {
-    $errors['Last_name'] = 'Only letters and white space allowed';
-  }
-}
 
 // Validate email
 if (empty($_POST['email'])) {
@@ -75,7 +56,7 @@ if (!empty($errors)) {
 }
 
 // If there are no errors, insert user data into the database
-$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password')";
+$sql = "INSERT INTO users (email, username, password) VALUES ('$email', '$username', '$password')";
 
 if (mysqli_query($conn, $sql)) {
   // Store the username in the session and redirect to success page
