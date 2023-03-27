@@ -20,13 +20,13 @@ form {
   border-radius: 2em;
 }
 
-#submit {
+#cancel {
   background-color: crimson;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin: 2em;
   margin: 2em;
 }
-#cancel {
+#submit {
   background-color: seagreen;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

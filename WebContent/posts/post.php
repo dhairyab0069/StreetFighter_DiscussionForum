@@ -10,32 +10,18 @@
     />
     <head>
       <link rel="stylesheet" href="../css/post.css" />
-      <script>
-        function displayImage() {
-          var input = document.getElementById("image-input");
-          if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              document.getElementById("image-preview").src = e.target.result;
-            };
-            reader.readAsDataURL(input.files[0]);
-          }
-        }
-      </script>
+      
     </head>
     <title>POST on The Form</title>
   </head>
   <body>
     <div class="heading">POST</div>
 
-    <form action="../validation/posts.php" method="post">
+    <form action="../validation/create_post.php" method="post">
       <label for="title">Title:</label><br />
       <input type="text" id="title" name="title" /><br />
       <label for="content">Content:</label><br />
       <textarea id="content" name="content"></textarea><br /><br />
-      <input type="file" id="image-input" onchange="displayImage()" />
-      <img id="image-preview" src=" " alt="your image" />
-      <br /><br />
 
       <div class="buttons">
         <input type="submit" value="Submit" id="submit" />

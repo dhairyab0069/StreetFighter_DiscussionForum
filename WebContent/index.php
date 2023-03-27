@@ -92,8 +92,8 @@ if(isset($_SESSION['username']))
     echo '<main>';
     echo '<ul>';
     echo '<li><a href="discussions/topic1.php">Topic 1</a></li>';
-    echo '<li><a href="#">Topic 2</a></li>';
-    echo '<li><a href="#">Topic 3</a></li>';
+    echo '<li><a href="discussions/topic2.php">Topic 2</a></li>';
+    echo '<li><a href="discussions/topic3.php">Topic 3</a></li>';
     echo '</ul>';
     echo '</main>';
 
