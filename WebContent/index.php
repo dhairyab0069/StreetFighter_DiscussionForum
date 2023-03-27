@@ -124,9 +124,9 @@ else
      if(isset($_SESSION['username']))
      {
      $host = "localhost";
-     $user = "27754175";
-     $password = "27754175";
-     $dbname = "db_27754175";
+     $user = "dhairya";
+     $password = "db19082002";
+     $dbname = "forum";
 
      $conn = mysqli_connect($host, $user, $password, $dbname);
 

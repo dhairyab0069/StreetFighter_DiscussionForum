@@ -5,9 +5,9 @@ ini_set('display_errors', '1');
 
 // database connection information
 $host = "localhost";
-$user = "27754175";
-$password = "27754175";
-$dbname = "db_27754175";
+$user = "dhairya";
+$password = "db19082002";
+$dbname = "forum";
 
 // connect to the database
 $conn = mysqli_connect($host, $user, $password, $dbname);
