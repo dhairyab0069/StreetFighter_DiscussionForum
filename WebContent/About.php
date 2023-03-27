@@ -65,11 +65,9 @@
 
 
       ?>  
-    <br><br><br>
-    <div id = "main">
-    <article id = "center">
-
-        <ul>
+    
+    <article id ="right_sidebar">
+    <ul>
             <nav>
                 <li><a href = "index.php"> Home </a><br>
                 <li><a href="About.php"> About</a><br>
@@ -81,43 +79,6 @@
             </nav>
                     
         </ul>
-    <?php
-    session_start();
-
-if(isset($_SESSION['username']))
-{
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-
-    echo "<h2>Latest Discussions</h2>";
-    echo '<main>';
-    echo '<ul>';
-    echo '<li><a href="#">Topic 1</a></li>';
-    echo '<li><a href="#">Topic 2</a></li>';
-    echo '<li><a href="#">Topic 3</a></li>';
-    echo '<li><a href="#">Topic 4</a></li>';
-    echo '<li><a href="#">Topic 5</a></li>';
-    echo '</ul>';
-    echo '</main>';
-
-
-}
-else
-{
-
-    echo "<h2>Latest Discussions</h2>";
-
-    echo "Please Log in to use this feature";
-}
-
-
-    ?>
-
-
-
-
-    </article>
-    <article id ="right_sidebar">
 
     
     <br>

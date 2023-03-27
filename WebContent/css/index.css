@@ -71,6 +71,13 @@ nav li a:hover {
   border: 1px solid #be8e55;
   box-shadow: 2px 2px #ffbe7d;
 }
+#right_sidebar {
+  width: 35%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #be8e55;
+  box-shadow: 2px 2px #ffbe7d;
+}
 
 ul {
   list-style-type: none;

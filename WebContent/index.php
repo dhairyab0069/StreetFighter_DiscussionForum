@@ -121,30 +121,36 @@ else
     
     <ul>
     <?php
-      // Connect to database
-      $host = "localhost";
-      $user = "dhairya";
-      $password = "db19082002";
-      $dbname = "forum";
+     if(isset($_SESSION['username']))
+     {
+     $host = "localhost";
+     $user = "27754175";
+     $password = "27754175";
+     $dbname = "db_27754175";
 
-      $conn = mysqli_connect($host, $user, $password, $dbname);
+     $conn = mysqli_connect($host, $user, $password, $dbname);
 
-      if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-      }
+     if (!$conn) {
+       die("Connection failed: " . mysqli_connect_error());
+     }
 
-      // Query to get recent posts
-      $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
-      $result = mysqli_query($conn, $sql);
+     // Query to get recent posts
+     $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
+     $result = mysqli_query($conn, $sql);
 
-      // Loop through posts and display them
-      while ($row = mysqli_fetch_assoc($result)) {
-        echo "<li>".$row['title'];
-        echo "<br>".$row['content']."</li>";
-      }
+     // Loop through posts and display them
+     while ($row = mysqli_fetch_assoc($result)) {
+       echo "<li>".$row['title'];
+       echo "<br>".$row['content']."</li>";
+     }
 
-      // Close database connection
-      mysqli_close($conn);
+     // Close database connection
+     mysqli_close($conn);
+   }
+   else
+   {
+     echo "Please log in to use these features...";
+   }
     ?>
   </ul>
 
