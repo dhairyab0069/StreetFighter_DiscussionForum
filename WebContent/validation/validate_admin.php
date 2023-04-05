@@ -28,11 +28,20 @@ if (isset($_POST['username']) && isset($_POST['password']))
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) 
-        {   $row = mysqli_fetch_assoc($result);
+        {   
+            $row = mysqli_fetch_assoc($result);
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $row['user_id'];
-            $_SESSION['admin'] = true;
-            echo "<p style='color:green;'>Login Successful</p>";
+            if(intval($row['user_id']/1000) == 3 ){
+                $_SESSION['admin'] = true;
+            }
+            else{
+                $_SESSION['admin'] = false;
+                // Redirect to the admin login page
+                header("Location: ../admin_login.php");
+                exit();
+            }
+            // Redirect to the home page
             header("Location: ../index.php");
             exit();
         }

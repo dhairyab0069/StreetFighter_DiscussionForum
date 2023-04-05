@@ -1,12 +1,13 @@
 <?php
 session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-
 $host = "localhost";
 $user = "dhairya";
 $password = "db19082002";
 $dbname = "forum";
+
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
@@ -91,10 +92,18 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
             {
                 echo '<a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
             }
+           /* else if ($_SESSION['admin'])
+            {
+                echo '<a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
+            }
             echo "<br><hr>";
+            echo $_SESSION['admin'];*/
         }
         ?>
+        
     </div>
+
+    <a href = '../index.php'>[Go Back] </a><br><br>
 
 </body>
 </html>

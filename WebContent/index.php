@@ -107,7 +107,9 @@ if(isset($_SESSION['username']))
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($row['user_id']).'&id='.urldecode($row['id']).' ">'.$row['title'].'</a></li>';
+      
     }
+    
     
    
     echo '</ul>';
