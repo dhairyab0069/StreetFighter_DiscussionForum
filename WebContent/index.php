@@ -106,7 +106,7 @@ if(isset($_SESSION['username']))
     $sql = "SELECT * FROM threads ORDER BY created_at DESC";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
-      echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($user_id).'&id='.urldecode($row['id']).' ">'.$row['title'].'</a></li>';
+      echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($row['user_id']).'&id='.urldecode($row['id']).' ">'.$row['title'].'</a></li>';
     }
     
    

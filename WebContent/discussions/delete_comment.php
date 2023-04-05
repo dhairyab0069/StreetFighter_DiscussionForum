@@ -21,10 +21,10 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-// get the comment id from the URL parameter
+
 $comment_id = $_GET['comment_id'];
 
-// check if the user has permission to remove the comment
+
 $stmt = $conn->prepare("SELECT user_id FROM comments WHERE comment_id = ?");
 $stmt->bind_param("i", $comment_id);
 $stmt->execute();
@@ -34,12 +34,10 @@ if ($row['user_id'] != $_SESSION['user_id']) {
   die("You do not have permission to remove this comment.");
 }
 
-// remove the comment from the database
 $stmt = $conn->prepare("DELETE FROM comments WHERE comment_id = ?");
 $stmt->bind_param("i", $comment_id);
 $stmt->execute();
 
-// redirect to the previous page
 header("Location: " . $_SERVER["HTTP_REFERER"]);
 exit();
 

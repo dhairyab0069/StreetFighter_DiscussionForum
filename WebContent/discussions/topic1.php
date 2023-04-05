@@ -19,14 +19,14 @@ if (isset($_GET['user_id']) && isset($_GET['id'])) {
     $user_id = $_GET['user_id'];
     $id = $_GET['id'];
 
-    // Get thread by user_id and id
-    $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
 }
 else {
     die("User ID and ID not provided in URL parameters.");
 }
+
+$sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +39,35 @@ else {
 
     <!-- Display thread -->
     <div>
+        <?php
+
+            $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) 
+            {   $row = mysqli_fetch_assoc($result);
+                $duserid = $row['user_id'];
+
+            }
+            
+
+            $sql = "SELECT username FROM users WHERE user_id = {$duserid}";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) 
+        {   $row = mysqli_fetch_assoc($result);
+            $dusername = $row['username'];
+            
+        }
+
+        $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+
+        ?>
+        
         <h2><?php echo $row['title']; ?></h2>
-        <p>Posted by <?php echo $_SESSION['username']; ?> on <?php echo $row['created_at']; ?></p>
+        <p>Posted by <?php echo $dusername; ?> on <?php echo $row['created_at']; ?></p>
         <p><?php echo $row['body']; ?></p>
     </div>
 
@@ -54,7 +81,7 @@ else {
     <!-- Display comments -->
     <div class = "comment">
         <?php
-        $sql = "SELECT * FROM comments WHERE user_id = $user_id AND post_id = $id ORDER BY created_at DESC";
+        $sql = "SELECT * FROM comments WHERE post_id = $id ORDER BY created_at DESC";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result)) {
             echo $row['content'];
@@ -64,6 +91,7 @@ else {
             {
                 echo '<a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
             }
+            echo "<br><hr>";
         }
         ?>
     </div>
