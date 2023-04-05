@@ -103,10 +103,10 @@ if(isset($_SESSION['username']))
     echo "<h2>Latest Discussions</h2>";
     echo '<main>';
     echo '<ul>';
-    $sql = "SELECT * FROM threads WHERE user_id = $user_id ORDER BY created_at DESC";
+    $sql = "SELECT * FROM threads ORDER BY created_at DESC";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
-      echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($user_id).' ">'.$row['title'].'</a></li>';
+      echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($user_id).'&id='.urldecode($row['id']).' ">'.$row['title'].'</a></li>';
     }
     
    
