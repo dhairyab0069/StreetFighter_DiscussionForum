@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (isset($_POST['username']) && isset($_POST['password']))
  {
     $username = $_POST['username'];
@@ -27,8 +28,9 @@ if (isset($_POST['username']) && isset($_POST['password']))
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) 
-        {
+        {   $row = mysqli_fetch_assoc($result);
             $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $row['user_id'];
             echo "<p style='color:green;'>Login Successful</p>";
             header("Location: ../index.php");
             exit();

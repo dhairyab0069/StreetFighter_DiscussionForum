@@ -25,6 +25,16 @@
     session_start();
     if(isset($_SESSION['username']))
     {
+      $host = "localhost";
+      $user = "dhairya";
+      $password = "db19082002";
+      $dbname = "forum";
+ 
+      $conn = mysqli_connect($host, $user, $password, $dbname);
+ 
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
         
         echo '<nav>';
         echo '<ul>';
@@ -87,13 +97,19 @@ if(isset($_SESSION['username']))
 {
     $username = $_SESSION['username'];
     $password = $_SESSION['password'];
+    $user_id = $_SESSION['user_id'];
+
 
     echo "<h2>Latest Discussions</h2>";
     echo '<main>';
     echo '<ul>';
-    echo '<li><a href="discussions/topic1.php">Topic 1</a></li>';
-    echo '<li><a href="discussions/topic2.php">Topic 2</a></li>';
-    echo '<li><a href="discussions/topic3.php">Topic 3</a></li>';
+    $sql = "SELECT * FROM threads WHERE user_id = $user_id ORDER BY created_at DESC";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($user_id).' ">'.$row['title'].'</a></li>';
+    }
+    
+   
     echo '</ul>';
     echo '</main>';
 
@@ -123,16 +139,7 @@ else
     <?php
      if(isset($_SESSION['username']))
      {
-     $host = "localhost";
-     $user = "dhairya";
-     $password = "db19082002";
-     $dbname = "forum";
-
-     $conn = mysqli_connect($host, $user, $password, $dbname);
-
-     if (!$conn) {
-       die("Connection failed: " . mysqli_connect_error());
-     }
+     
 
      // Query to get recent posts
      $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";

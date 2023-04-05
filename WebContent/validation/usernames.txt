@@ -1,4 +1,0 @@
-username,password
-myuser,mypassword
-johndoe,letmein
-janedoe,123456
