@@ -13,13 +13,11 @@
 
 - ### Users:
 
-  There are Three Types of Users.<br>
+  There are Two Types of Users.<br>
 
   - Admins/Moderators: Role of admin or moderator is to maintain the website, grant and change priviliges gained for the website. They can remove forums which violate the terms and conditions of the website.
 
   - Registered Users: They will be able to create accounts, surf the site to check out the various features and content the site offers, participate in forums and so on. Normal users can request to join the team of moderators.
-
-  - Verified Users: These are viewers which are recognised for their efforts in Street Fighter esports, official developers of the games, voice actors etc. They will be recognised with a special mark or symbol.
 
   ### Features :
 
