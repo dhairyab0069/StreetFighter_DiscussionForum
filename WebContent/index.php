@@ -64,10 +64,12 @@
     <br> <br><br>
     <image src = "images/sf.png" class = "logo">
       <?php
-      $post_bt = '<button onclick="location.href=\'posts/post.php\'">Post</button>';
+      $post_bt = '<button onclick="location.href=\'posts/post.php\'">New Post</button>';
+      $thread_bt = '<button onclick="location.href= \'#\'">New Thread</button>';
       if(isset($_SESSION['username']))
       {
-        echo $post_bt;
+        echo $post_bt."&ensp;&ensp;";
+        echo $thread_bt;
       }
       
       

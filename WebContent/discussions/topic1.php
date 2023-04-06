@@ -85,13 +85,14 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
         $sql = "SELECT * FROM comments WHERE post_id = $id ORDER BY created_at DESC";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result)) {
-            echo $row['content'];
+            echo '<b><i><h4>'.$row['content'].'</h4></i></b>';
             
-            echo '<br>Posted at : '.$row['created_at'].'<br>';
+            echo 'Posted at : '.$row['created_at'].'<br>';
             if ($row['user_id'] == $_SESSION['user_id'])
             {
-                echo '<a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
+                echo '<br><a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
             }
+            echo '<hr>';
            /* else if ($_SESSION['admin'])
             {
                 echo '<a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
