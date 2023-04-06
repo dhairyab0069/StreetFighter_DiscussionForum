@@ -3,6 +3,11 @@ html {
   border: dashed 0.25em;
   border-radius: 1em;
 }
+body {
+  background-color: grey;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
 form {
   margin: 5 em;
   text-align: center;

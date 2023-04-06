@@ -8,6 +8,8 @@ $password = "db19082002";
 $dbname = "forum";
 
 
+
+
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
 if (!$conn) {
@@ -27,6 +29,7 @@ else {
 $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
+
 ?>
 
 <!DOCTYPE html>

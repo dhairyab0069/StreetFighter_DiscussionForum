@@ -8,6 +8,7 @@ ini_set('display_errors', '1');
 <html>
   <head>
     <title>Create New Thread</title>
+    <link rel = 'stylesheet' href = 'css/new_thread.css'>
   </head>
   <body>
     <h1>Create New Thread</h1>

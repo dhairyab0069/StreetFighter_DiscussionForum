@@ -65,7 +65,7 @@
     <image src = "images/sf.png" class = "logo">
       <?php
       $post_bt = '<button onclick="location.href=\'posts/post.php\'">New Post</button>';
-      $thread_bt = '<button onclick="location.href= \'#\'">New Thread</button>';
+      $thread_bt = '<button onclick="location.href= \'discussions/new_thread.php\'">New Thread</button>';
       if(isset($_SESSION['username']))
       {
         echo $post_bt."&ensp;&ensp;";
