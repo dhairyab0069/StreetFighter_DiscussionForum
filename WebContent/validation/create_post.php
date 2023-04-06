@@ -1,4 +1,7 @@
 <?php
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 // Check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -27,12 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
 
       // Insert new post into database
-      $sql = "INSERT INTO posts (title, content) VALUES ('$title', '$content')";
+      $user_id = $_SESSION['user_id'];
+      $sql = "INSERT INTO posts (user_id,title, content,created_at) VALUES ('$user_id','$title', '$content',NOW())";
       $result = mysqli_query($conn, $sql);
 
       if ($result) {
         // Success message
-        echo "Post created successfully!";
+        header("Location: ../index.php");
       } else {
         // Error handling
         echo "Failed to create post.";
