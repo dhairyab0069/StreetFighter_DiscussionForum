@@ -25,9 +25,10 @@
 
       <div class="buttons">
         <input type="submit" value="Submit" id="submit" />
-        <a href="index.php">
-          <input type="submit" value="Cancel" id="Cancel"  ></a>
-      </div>
+        
     </form>
+    <a href="../index.php">
+          <input type="cancel" value="Cancel" id="Cancel"  ></a>
+      </div>
   </body>
 </html>
