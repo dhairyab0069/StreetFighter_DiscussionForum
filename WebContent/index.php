@@ -78,7 +78,7 @@
       ?>  
     <br><br><br>
     <div id = "main">
-    <article id = "center">
+    <article id = "center" style="height: 300px; overflow-y: scroll;">
 
         <ul>
             <nav>
@@ -102,7 +102,7 @@ if(isset($_SESSION['username']))
     $user_id = $_SESSION['user_id'];
 
 
-    echo "<h2>Latest Discussions</h2>";
+    echo "<h2 id = 'fixed'>Latest Discussions</h2>";
     echo '<main>';
     echo '<ul>';
     $sql = "SELECT * FROM threads ORDER BY created_at DESC";
@@ -134,42 +134,34 @@ else
 
 
     </article>
-    <article id ="right_sidebar">
-
-    
-    <br>
-    
-    <ul>
+    <article id="right_sidebar" style="height: 300px; overflow-y: scroll;">
+  <br>
+  <ul>
     <?php
-     if(isset($_SESSION['username']))
-     {
-     
 
-     // Query to get recent posts
-     $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
-     $result = mysqli_query($conn, $sql);
+    echo "<h2 id = 'fixed'>Latest Posts: </h2><b><hr></b>";
+    if(isset($_SESSION['username']))
+    {
+      // Query to get recent posts
+      $sql = "SELECT * FROM posts ORDER BY created_at DESC";
+      $result = mysqli_query($conn, $sql);
 
-     // Loop through posts and display them
-     while ($row = mysqli_fetch_assoc($result)) {
-       echo "<li>".$row['title'];
-       echo "<br>".$row['content']."</li>";
-     }
+      // Loop through posts and display them
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo "<li><a href = '#'>".$row['title'].'</a></li>';
+      }
 
-     // Close database connection
-     mysqli_close($conn);
-   }
-   else
-   {
-     echo "Please log in to use these features...";
-   }
+      // Close database connection
+      mysqli_close($conn);
+    }
+    else
+    {
+      echo "Please log in to use these features...";
+    }
     ?>
   </ul>
+</article>
 
-   
-
-    
-    
-    </article>
 
 
     </div>
