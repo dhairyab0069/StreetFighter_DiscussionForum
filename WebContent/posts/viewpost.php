@@ -26,7 +26,7 @@ else {
     die("User ID and ID not provided in URL parameters.");
 }
 
-$sql = "SELECT * FROM posts WHERE id = $id ";
+$sql = "SELECT * FROM posts WHERE post_id = '$id'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
 
@@ -36,7 +36,7 @@ $sql = "SELECT * FROM posts WHERE id = $id ";
 <html>
 <head>
     <title><?php echo $row['title']; ?></title>
-    <link rel = "stylesheet" href = "css/topic.css">
+    <link rel = "stylesheet" href = "../css/postview.css">
 </head>
 <body>
 
@@ -44,7 +44,7 @@ $sql = "SELECT * FROM posts WHERE id = $id ";
     <div>
         <?php
 
-            $sql = "SELECT * FROM posts WHERE id = $id ORDER BY created_at DESC;";
+            $sql = "SELECT * FROM posts WHERE post_id = '$id'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) 
@@ -54,7 +54,7 @@ $sql = "SELECT * FROM posts WHERE id = $id ";
             }
             
 
-            $sql = "SELECT username FROM users WHERE user_id = {$duserid};";
+            $sql = "SELECT username FROM users WHERE user_id = '{$duserid}'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) 
@@ -63,7 +63,7 @@ $sql = "SELECT * FROM posts WHERE id = $id ";
             
         }
 
-        $sql = "SELECT * FROM posts WHERE id = $id ORDER BY created_at DESC;";
+        $sql = "SELECT * FROM posts WHERE post_id = '$id'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
 

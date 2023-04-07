@@ -150,7 +150,7 @@ else
 
       // Loop through posts and display them
       while ($row = mysqli_fetch_assoc($result)) {
-        echo "<li><a href = 'posts/viewpost.php?username=".urlencode($username)."&user_id=".urlencode($user_id)."&id=".urlencode($id)."'>".$row['title'].'</a></li>';
+        echo "<li><a href = 'posts/viewpost.php?username=".urlencode($username)."&user_id=".urlencode($user_id)."&id=".urlencode($row['post_id'])."'>".$row['title'].'</a></li>';
       }
 
       // Close database connection
