@@ -30,6 +30,7 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
 
+       
 ?>
 
 <!DOCTYPE html>
@@ -91,18 +92,18 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
             
             echo 'Posted at : '.$row['created_at'].'<br>';
             if ($row['user_id'] == $_SESSION['user_id'])
-            {
-                echo '<br><a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
+             {
+                echo '<br><a href="delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id="remove">Remove</button></a><br>' ;
+            } elseif (isset($_SESSION['admin'])) {
+                echo '<br><a href="delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id="remove">Remove</button></a><br>' ;
             }
             echo '<hr>';
-           /* else if ($_SESSION['admin'])
-            {
-                echo '<a href = "delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id = "remove" '.'>Remove</button></a><br>' ;
-            }
-            echo "<br><hr>";
-            echo $_SESSION['admin'];*/
+            
+
+            
         }
         ?>
+        
         
     </div>
 

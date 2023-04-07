@@ -74,10 +74,11 @@ session_start();
       </form>
     </div>
     <?php
-    if (isset($_SESSION['result'])) {
-        echo $_SESSION['result'];
-        unset($_SESSION['result']);
+    if (isset($_SESSION['error'])) {
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
     }
+
     ?>
   </body>
 </html>

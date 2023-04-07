@@ -105,6 +105,10 @@ if(isset($_SESSION['username']))
     $row = mysqli_fetch_assoc($result);
 
     echo '<h1> '.$row['username'].'</h1><hr>';
+    if(isset($_SESSION['admin']))
+    {
+      echo 'This is an admin account.';
+    }
     echo '<ul>';
     echo '<li>email : '.$row['email'];
     echo '</ul>';

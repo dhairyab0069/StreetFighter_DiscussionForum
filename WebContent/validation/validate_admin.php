@@ -33,11 +33,14 @@ if (isset($_POST['username']) && isset($_POST['password']))
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $row['user_id'];
             if(intval($row['user_id']/1000) == 3 ){
-                $_SESSION['admin'] = true;
+                $_SESSION['admin'] = 'admin';
+                header("Location: ../index.php");
+                exit();
             }
             else{
-                $_SESSION['admin'] = false;
                 // Redirect to the admin login page
+                
+                $_SESSION['error'] ='Not an admin ';
                 header("Location: ../admin_login.php");
                 exit();
             }

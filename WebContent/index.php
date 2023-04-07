@@ -94,6 +94,7 @@
         </ul>
     <?php
     session_start();
+    
 
 if(isset($_SESSION['username']))
 {
@@ -101,7 +102,7 @@ if(isset($_SESSION['username']))
     $password = $_SESSION['password'];
     $user_id = $_SESSION['user_id'];
 
-
+    
     echo "<h2 >Latest Discussions</h2>";
     echo '<main>';
     echo '<ul>';
@@ -116,6 +117,7 @@ if(isset($_SESSION['username']))
    
     echo '</ul>';
     echo '</main>';
+    
 
 
 }
@@ -159,6 +161,7 @@ else
       echo "Please log in to use these features...";
     }
     ?>
+    
   </ul>
 </article>
 

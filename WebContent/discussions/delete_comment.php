@@ -30,9 +30,20 @@ $stmt->bind_param("i", $comment_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
-if ($row['user_id'] != $_SESSION['user_id']) {
-  die("You do not have permission to remove this comment.");
+
+if (isset($_SESSION['admin']))
+{
+  $stmt = $conn->prepare("DELETE FROM comments WHERE comment_id = ?");
+  $stmt->bind_param("i", $comment_id);
+  $stmt->execute();
 }
+
+else if ($row['user_id'] != $_SESSION['user_id']) {
+  die("You do not have permission to remove this comment.");
+  
+}
+
+
 
 $stmt = $conn->prepare("DELETE FROM comments WHERE comment_id = ?");
 $stmt->bind_param("i", $comment_id);
