@@ -15,8 +15,8 @@ if (isset($_POST['username']) && isset($_POST['password']))
     {
         
         $servername = "localhost";
-        $dbusername = "dhairya";
-        $dbpassword = "db19082002";
+        $dbusername = "27754175";
+        $dbpassword = "27754175";
         $dbname = "forum";
 
         $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);

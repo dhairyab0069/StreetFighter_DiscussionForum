@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //connect to database
     $host = "localhost";
-    $user = "dhairya";
-    $password = "db19082002";
+    $user = "27754175";
+    $password = "27754175";
     $dbname = "forum";
 
     $title = $_POST['title'];

@@ -5,8 +5,8 @@ ini_set('display_errors', '1');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // database connection information
 $host = "localhost";
-$user = "dhairya";
-$password = "db19082002";
+$user = "27754175";
+$password = "27754175";
 $dbname = "forum";
 
 $thread_id = $_POST['thread_id'];

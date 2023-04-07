@@ -40,7 +40,7 @@
         echo '<ul>';
 
         echo '<li><a href="validation/logout.php">Log Out</a></li>';
-        echo '<li><a href="Profile.php">Profile</a></li>';
+        echo '<li><a href="#">Profile</a></li>';
         echo '</ul>';
         echo '</nav>';
         
@@ -98,24 +98,17 @@
 if(isset($_SESSION['username']))
 {
     $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
     $user_id = $_SESSION['user_id'];
 
-
-    echo "<h2 >Latest Discussions</h2>";
-    echo '<main>';
-    echo '<ul>';
-    $sql = "SELECT * FROM threads ORDER BY created_at DESC";
+    $sql = "SELECT * FROM users where user_id= $user_id";
     $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo '<li><a href="discussions/topic1.php?Topic='.urldecode($username).'&user_id='.urldecode($row['user_id']).'&id='.urldecode($row['id']).' ">'.$row['title'].'</a></li>';
-      
-    }
-    
-    
-   
+    $row = mysqli_fetch_assoc($result);
+
+    echo '<h1> '.$row['username'].'</h1><hr>';
+    echo '<ul>';
+    echo '<li>email : '.$row['email'];
     echo '</ul>';
-    echo '</main>';
+
 
 
 }
@@ -134,33 +127,7 @@ else
 
 
     </article>
-    <article id="right_sidebar" style="height: 300px; overflow-y: scroll;">
-  <br>
-  <ul>
-    <?php
-
-    echo "<h2 >Latest Posts: </h2><b><hr></b>";
-    if(isset($_SESSION['username']))
-    {
-      // Query to get recent posts
-      $sql = "SELECT * FROM posts ORDER BY created_at DESC";
-      $result = mysqli_query($conn, $sql);
-
-      // Loop through posts and display them
-      while ($row = mysqli_fetch_assoc($result)) {
-        echo "<li><a href = 'posts/viewpost.php?username=".urlencode($username)."&user_id=".urlencode($user_id)."&id=".urlencode($id)."'>".$row['title'].'</a></li>';
-      }
-
-      // Close database connection
-      mysqli_close($conn);
-    }
-    else
-    {
-      echo "Please log in to use these features...";
-    }
-    ?>
-  </ul>
-</article>
+    
 
 
 
