@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $host = 'localhost';
     $user = '27754175';
     $password = '27754175';
-    $database = 'forum';
+    $database = 'db_27754175';
 
     $conn = mysqli_connect($host, $user, $password, $database);
 

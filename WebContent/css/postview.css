@@ -40,3 +40,35 @@ a {
 a:hover {
   color: #666;
 }
+/* Button styles for when user has not liked or disliked the post */
+.like-button.not-liked {
+  background-color: green;
+  color: white;
+}
+
+.dislike-button.not-disliked {
+  background-color: red;
+  color: white;
+}
+
+/* Button styles for when user has liked the post */
+.like-button.liked {
+  background-color: blue;
+  color: white;
+}
+
+.dislike-button.liked {
+  background-color: red;
+  color: white;
+}
+
+/* Button styles for when user has disliked the post */
+.like-button.disliked {
+  background-color: green;
+  color: white;
+}
+
+.dislike-button.disliked {
+  background-color: orange;
+  color: white;
+}

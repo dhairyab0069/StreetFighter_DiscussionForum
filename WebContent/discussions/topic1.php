@@ -5,7 +5,7 @@ ini_set('display_errors', '1');
 $host = "localhost";
 $user = "27754175";
 $password = "27754175";
-$dbname = "forum";
+$dbname = "db_27754175";
 
 
 
@@ -38,6 +38,28 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
 <head>
     <title><?php echo $row['title']; ?></title>
     <link rel = "stylesheet" href = "css/topic.css">
+    <script>
+    const form = document.querySelector('#comment-form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const commentSection = document.querySelector('.comment');
+                    commentSection.innerHTML = xhr.responseText + commentSection.innerHTML;
+                    form.reset();
+                } else {
+                    console.error('Error:', xhr.status, xhr.statusText);
+                }
+            }
+        };
+        xhr.open('POST', 'add_comment.php', true);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(formData);
+    });
+</script>
 </head>
 <body>
 
@@ -76,11 +98,12 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
     </div>
 
     <!-- Form to add comment -->
-    <form action="add_comment.php" method="post">
+    <form id="comment-form" method="post">
         <input type="hidden" name="thread_id" value="<?php echo $id; ?>">
         <textarea name="body"></textarea>
         <button type="submit" name="add_comment">Add comment</button>
     </form>
+
 
     <!-- Display comments -->
     <div class = "comment">
@@ -97,11 +120,36 @@ $sql = "SELECT * FROM threads WHERE id = $id ORDER BY created_at DESC";
             } elseif (isset($_SESSION['admin'])) {
                 echo '<br><a href="delete_comment.php?comment_id='.urlencode($row['comment_id']).'"><button id="remove">Remove</button></a><br>' ;
             }
+            
             echo '<hr>';
+
+
+
+            
+
             
 
             
         }
+
+        
+        
+        ?>
+
+
+        <?php
+            $sql = "SELECT * FROM comments WHERE post_id = $id ORDER BY created_at DESC";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+
+            if ($row['user_id'] == $_SESSION['user_id'])
+            {
+                echo '<br><a href="delete_thread.php?id='.urlencode($id).'"><button id="remove">Remove THREAD</button></a><br>' ;
+            } 
+            elseif (isset($_SESSION['admin'])) {
+                echo '<br><a href="delete_thread.php?id='.urlencode($id).'"><button id="remove">Remove THREAD</button></a><br>' ;
+            }
+
         ?>
         
         

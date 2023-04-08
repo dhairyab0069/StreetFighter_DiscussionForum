@@ -17,7 +17,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
         $servername = "localhost";
         $dbusername = "27754175";
         $dbpassword = "27754175";
-        $dbname = "forum";
+        $dbname = "db_27754175";
 
         $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
         if (!$conn) {
@@ -26,6 +26,8 @@ if (isset($_POST['username']) && isset($_POST['password']))
 
         $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+
 
         if (mysqli_num_rows($result) > 0) 
         {   
@@ -52,6 +54,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
         {
             echo "Incorrect username or password";
         }
+
 
         mysqli_close($conn);
     }

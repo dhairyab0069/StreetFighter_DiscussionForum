@@ -84,7 +84,7 @@ session_start();
         unset($_SESSION['result']);
     }
     ?>
-    <a href = "admin_login.php">Admin Login</a> <br>
+    <a href = "admin_login.php">Admin Login</a> [Admin login from here only and not the form above]<br>
     <a href ="index.php">[ Back To Home ] </a>
 
   </body>

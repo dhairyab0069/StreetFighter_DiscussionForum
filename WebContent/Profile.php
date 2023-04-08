@@ -28,7 +28,7 @@
       $host = "localhost";
       $user = "27754175";
       $password = "27754175";
-      $dbname = "forum";
+      $dbname = "db_27754175";
  
       $conn = mysqli_connect($host, $user, $password, $dbname);
  
@@ -99,6 +99,7 @@ if(isset($_SESSION['username']))
 {
     $username = $_SESSION['username'];
     $user_id = $_SESSION['user_id'];
+    
 
     $sql = "SELECT * FROM users where user_id= $user_id";
     $result = mysqli_query($conn, $sql);
@@ -107,10 +108,14 @@ if(isset($_SESSION['username']))
     echo '<h1> '.$row['username'].'</h1><hr>';
     if(isset($_SESSION['admin']))
     {
-      echo 'This is an admin account.';
+      echo 'This is an admin account.<br>';
+      echo '<a href = "admin/admin_view_users.php" >view users </a>';
+      
     }
     echo '<ul>';
+    echo "<li>".$row['name']."</li>";
     echo '<li>email : '.$row['email'];
+    
     echo '</ul>';
 
 

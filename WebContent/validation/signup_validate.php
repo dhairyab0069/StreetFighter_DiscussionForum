@@ -7,7 +7,7 @@ ini_set('display_errors', '1');
 $host = "localhost";
 $user = "27754175";
 $password = "27754175";
-$dbname = "forum";
+$dbname = "db_27754175";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 

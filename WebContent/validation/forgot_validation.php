@@ -42,7 +42,7 @@ if (!empty($errors)) {
 $servername = "localhost";
 $username = "dhairya";
 $password = "db19082002";
-$dbname = "forum";
+$dbname = "db_27754175";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $host = "localhost";
     $user = "27754175";
     $password = "27754175";
-    $dbname = "forum";
+    $dbname = "db_27754175";
 
     $title = $_POST['title'];
     $body = $_POST['body'];

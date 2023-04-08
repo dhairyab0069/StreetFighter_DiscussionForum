@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $host = "localhost";
 $user = "27754175";
 $password = "27754175";
-$dbname = "forum";
+$dbname = "db_27754175";
 
 $thread_id = $_POST['thread_id'];
 $body = $_POST['body'];
@@ -35,3 +35,4 @@ mysqli_close($conn);
 
 }
 ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
